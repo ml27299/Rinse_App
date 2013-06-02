@@ -26,13 +26,14 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <script>
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            // PhoneGap is loaded 
+            function onDeviceReady() {
+                navigator.splashscreen.hide();
+            }
+        </script>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
