@@ -36,13 +36,21 @@
             function onDeviceReady() {
                 navigator.splashscreen.hide();
             }
+            function next(){
+            $.mobile.changePage( "pages/signup.html", {
+                                transition: "slidefade",
+                                role : "page",
+                                changeHash:true,
+                                reloadPage:true
+                                });
+            }
         </script>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
-                <style>.center-buttn{ position: absolute; margin-top: 50%; margin-left:10%; width:80%}</style>
+        <link rel="stylesheet" href="css/index.css">
         <div data-role = "page" style = "background-image:url('img/mainscreen.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
             
             <div class = "center-buttn">
-                <a href="[url]" data-role="button" style="color: #038bb7;">NOW</a>
+                <a href="javascript:next();" data-role="button" style="color: #038bb7;">NOW</a>
                 <a href="[url]" data-role="button" style="color: #038bb7;">LATER</a>
             </div>
         </div>
