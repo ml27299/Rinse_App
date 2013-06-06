@@ -21,6 +21,8 @@
 }
 
 .center-buttn{ position: absolute; margin-top: 50%; margin-left:10%; width:80%}
-
+.center-tracker{ position: absolute; margin-top: -15%; margin-left:0%; width:50% height:50%}
 .center-buttn-sign{ position: absolute; margin-top: 25%; margin-left:10%; width:80%}
 .center-link-sign{ position: absolute; margin-top: 0%; margin-left:15%; width:80%}
+.center-label{ position: absolute; margin-top: 15%; margin-left:25%; font-weight:700; }
+
