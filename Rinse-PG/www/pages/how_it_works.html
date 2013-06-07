@@ -30,23 +30,12 @@
                 </head>
     <body>
         
-        <div data-role= "page" style = "background-image:url('../img/white_background.png');background-color:#cccccc; background-position:center 50px; background-size:100% 100%;">
-            
-            <style>.my-btn-hdr { text-transform:uppercase; background-color:blue; color:white; min-height:33px; width:93px; }</style>
-            
+        <div data-role= "page" style = "background-image:url('../img/how_it_works.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
             <script type = "text/javascript" src="../js/signup.js"></script>
-            <div data-role="header" data-position="fixed" data-theme = "c">
-                <a href="javascript:goBack();" data-icon="arrow-d" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
-                <h1>RINSE</h1>
-            </div>
-            <div class = "center-logo">
-                <image src = "../img/rinse_logo.png" width = "100%" height = "80%"/>
-            </div>
-            <div class = "center-sign-in">
-                <input type = "text" placeholder = "Email" id = "email">
-                <input type = "text" placeholder = "Password" id = "password">
-                <br />
-                <a href="javascript:signIn();" data-role="button" style="color: #038bb7;">Sign In<a>
-            </div>
+                <div class = "center-how-it-works-close">
+                <a href="javascript:goBack();" data-role="button" data-transition="slidedown" style="color: #038bb7;">Close<a>
+                </div>
+            
+        </div>
     </body>
 </html>
