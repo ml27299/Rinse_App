@@ -19,12 +19,3 @@
 
 
 
-
-function onDeviceReady() {
-    navigator.splashscreen.hide();
-}
-
-function next(){
-    var main_script = 'js/main.js';
-    $.getScript(main_script, function(){movePage('pages/signup.html','slidefade','page',true,true);});
-}
