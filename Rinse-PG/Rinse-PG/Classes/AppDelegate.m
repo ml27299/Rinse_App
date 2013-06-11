@@ -27,7 +27,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
+#import <HockeySDK/HockeySDK.h>
 #import <Cordova/CDVPlugin.h>
 
 @implementation AppDelegate
@@ -63,6 +63,10 @@
  */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"ff6f4e78d9b33c4994b0338f8ab05865"
+                                                           delegate:self];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
 #if __has_feature(objc_arc)
@@ -129,6 +133,15 @@
 - (void)applicationDidReceiveMemoryWarning:(UIApplication*)application
 {
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
+}
+
+//Hockey App Delegate Method
+- (NSString *)customDeviceIdentifierForUpdateManager:(BITUpdateManager *)updateManager {
+#ifndef CONFIGURATION_AppStore
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(uniqueIdentifier)])
+        return [[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)];
+#endif
+    return nil;
 }
 
 @end
