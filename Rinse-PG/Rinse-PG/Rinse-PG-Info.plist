@@ -16,13 +16,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>icon.png</string>
-				<string>icon@2x.png</string>
-				<string>icon-72.png</string>
-				<string>icon-72@2x.png</string>
+				<string>rinse_icon.png</string>
+				<string>rinse_icon@2x.png</string>
+				<string>rinse_icon_ipad.png</string>
+				<string>rinse_icon_ipad@2x.png</string>
 			</array>
-			<key>UIPrerenderedIcon</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
