@@ -43,6 +43,10 @@
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		E0E4128217690B7300BDFAF9 /* rinse_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E4128117690B7300BDFAF9 /* rinse_icon.png */; };
+		E0E4128417690B7700BDFAF9 /* rinse_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */; };
+		E0E4128617690C7300BDFAF9 /* rinse_icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */; };
+		E0E4128817690C8200BDFAF9 /* rinse_icon_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */; };
 		E0EE0C9A1767A1860098F819 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EE0C961767A1860098F819 /* HockeySDK.framework */; };
 		E0EE0C9B1767A1860098F819 /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E0EE0C981767A1860098F819 /* HockeySDK.xcconfig */; };
 		E0EE0C9C1767A1860098F819 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0EE0C991767A1860098F819 /* HockeySDKResources.bundle */; };
@@ -114,6 +118,10 @@
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Rinse-PG-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Rinse-PG-Info.plist"; path = "../Rinse-PG-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		E0E4128117690B7300BDFAF9 /* rinse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinse_icon.png; sourceTree = "<group>"; };
+		E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rinse_icon@2x.png"; sourceTree = "<group>"; };
+		E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinse_icon_ipad.png; sourceTree = "<group>"; };
+		E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rinse_icon_ipad@2x.png"; sourceTree = "<group>"; };
 		E0EE0C961767A1860098F819 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		E0EE0C981767A1860098F819 /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
 		E0EE0C991767A1860098F819 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
@@ -194,6 +202,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */,
+				E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */,
+				E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */,
+				E0E4128117690B7300BDFAF9 /* rinse_icon.png */,
 				FC0EE9371768812100FDAFD4 /* profile.js */,
 				FC0EE9351768672700FDAFD4 /* forgot_password.js */,
 				FC0EE933176865EC00FDAFD4 /* forgot_password.html */,
@@ -433,6 +445,10 @@
 				E0EE0C9B1767A1860098F819 /* HockeySDK.xcconfig in Resources */,
 				E0EE0C9C1767A1860098F819 /* HockeySDKResources.bundle in Resources */,
 				FC0EE934176865EC00FDAFD4 /* forgot_password.html in Resources */,
+				E0E4128217690B7300BDFAF9 /* rinse_icon.png in Resources */,
+				E0E4128417690B7700BDFAF9 /* rinse_icon@2x.png in Resources */,
+				E0E4128617690C7300BDFAF9 /* rinse_icon_ipad.png in Resources */,
+				E0E4128817690C8200BDFAF9 /* rinse_icon_ipad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
