@@ -24,7 +24,15 @@ function onDeviceReady() {
     navigator.splashscreen.hide();
 }
 
-function next(){
+function nextPage(){
     var main_script = 'js/main.js';
-    $.getScript(main_script, function(){movePage('pages/signup.html','slidefade','page',true,true);});
+    var name = window.localStorage.getItem('name');
+    var email = window.localStorage.getItem('email');
+    var phone = window.localStorage.getItem('phone');
+    var address = window.localStorage.getItem('address');
+    var zip = window.localStorage.getItem('zip');
+    if(!email || !name || !phone || !zip || !address)
+        $.getScript(main_script, function(){movePage('pages/signup.html','slidefade','page',true,true);});
+    else
+        $.getScript(main_script, function(){movePage('pages/confirm_now.html','slidefade','page',true,true);});
 }

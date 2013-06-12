@@ -47,8 +47,8 @@ function request(end_url,data0){
                 dataType: 'json',
                 contentType: 'application/json',
                 data: data0,
-           success: function(result) {alert(JSON.stringify(result));return result;},
-                error: function(arguments) {return arguments;}
+           success: function(result) {return result;},
+           error: function(arguments) {alert(JSON.stringify(arguments));return arguments;}
            });
     
 }

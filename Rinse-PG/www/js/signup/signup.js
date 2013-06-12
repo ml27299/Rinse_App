@@ -25,3 +25,6 @@ function goBack(){
 function hasAccount(){
     $.getScript(script_url, function(){movePage('sign_in.html','slideup','page',true,true);});
 }
+function goProfile(){
+    $.getScript(script_url, function(){movePage('profile.html','slidefade','page',true,false);});
+}

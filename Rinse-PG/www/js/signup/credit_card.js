@@ -30,3 +30,6 @@ function next(file){
     var main_script = '../js/main.js';
     $.getScript(main_script, function(){movePage(file,'slidefade','page',true,true);});
 }
+function goProfile(){
+    $.getScript(script_url, function(){movePage('profile.html','slidefade','page',true,false);});
+}
