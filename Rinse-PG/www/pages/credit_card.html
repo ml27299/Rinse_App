@@ -27,13 +27,19 @@
             <script src="jquerymobile/jquery.mobile-1.3.1.min.js"></script>
             <script type="text/javascript" src="cordova-2.7.0.js"></script>
             <link rel="stylesheet" href="css/index.css">
+                <script type="text/javascript">
+                    touchMove = function(event) {
+                        event.preventDefault();
+                    }
+                    </script>
+
                 </head>
     <body>
         
-        <div data-role= "page" style = "background-image:url('../img/white_background.png');background-color:#cccccc; background-position:center 50px; background-size:100% 100%;">
+        <div data-role= "page" ontouchmove="touchMove(event)" style = "background-image:url('../img/white_background.png');background-color:#cccccc; background-position:center 50px; background-size:100% 100%;">
             <style>.my-btn-hdr { text-transform:uppercase; background-color:blue; color:white; min-height:33px; width:93px; }</style>
             
-            <script type = "text/javascript" src="../js/credit_card.js"></script>
+            <script type = "text/javascript" src="../js/signup/credit_card.js"></script>
             <div data-role="header" data-position="fixed" data-theme = "c">
                 <a href="javascript:goBack();" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
                 <a href="index.html" data-icon="gear" class="ui-btn-right" data-iconpos="notext">Options</a>
@@ -70,7 +76,7 @@
                        </div>
                 <br />
             <div class = "center-buttn-credit">
-                <a href="javascript:goNext('pages/confirm_now.html');" data-role="button" style="color: #038bb7;">Confirm Order</a>
+                <a href="javascript:next('confirm_now.html');" data-role="button" style="color: #038bb7;">Confirm Order</a>
                 <br />
                 <a href="javascript:hasAccount();" align = "center">Have an account already?</a>
             </div>

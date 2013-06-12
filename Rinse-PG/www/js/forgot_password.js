@@ -17,16 +17,25 @@
  * under the License.
  */
 
+var main_script = '../js/main.js';
 
-var script_url = '../js/signup/signup_model.js';
 function goBack(){
     history.go(-1);
 }
 
-function hasAccount(){
-    $.getScript(script_url, function(){movePage('sign_in.html','slideup','page',true,true);});
+function go(){
+    $.getScript(main_script, function(){
+            goAlert('We have sent you an email with further instructions','Forgot Password');
+            goAction();
+            goBack();
+    });
 }
-function next(file){
-    var main_script = '../js/main.js';
-    $.getScript(main_script, function(){movePage(file,'slidefade','page',true,true);});
+
+function goAction(){
+    var email = document.getElementById('email').value;
+    if(email){
+        var data_obj = {email: email};
+        request('forget/get',data_obj);
+    }else
+        $.getScript(main_script, function(){goAlert('Please Fill out all fields','Empty Field');});
 }

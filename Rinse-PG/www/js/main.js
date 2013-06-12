@@ -33,6 +33,13 @@ function alertDismissed() {
     // do nothing
 }
 
+function zipSupported(zip){
+    if(zip == 94123 || zip == 94109 || zip == 94115 ){
+        return;
+    }else
+        goAlert('Your Zipcode is not supported at this time.','Zipcode');
+}
+
 function request(end_url,data0){
     $.ajax({
                 //type: "POST",

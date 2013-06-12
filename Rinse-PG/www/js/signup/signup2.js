@@ -36,16 +36,9 @@ function post(){
     var zip = document.getElementById('zip').value;
     
     if(address && zip){
-        var good = false;
-        if(zip != '94123' && !good)
-            good = true;
-        if(zip != '94109' && !good)
-            good = true;
-        if(zip != '94115' && !good)
-            good = true;
-        if(!good){
-            $.getScript(main_script, function(){goAlert('Your zipcode is not covered at the moment','Zip not covered');});
-        }
+   
+        $.getScript(main_script, function(){
+        zipSupported(zip);
         var data_obj = {name:name,email:email,phone:phone,password:password,address:address,address2:address2,zip:zip};
         
         $.getScript(model_script, function()
@@ -53,7 +46,7 @@ function post(){
             request('user/post',data_obj);
             goNext(1);
         });
-        
+        });
     }else
         $.getScript(main_script, function(){goAlert('Please Fill out all fields','Empty Field');});
     

@@ -17,66 +17,38 @@
  * under the License.
  */
 
-var base_url = 'http://rinse.herokuapp.com/public/';
+var main_script = '../js/main.js';
 
 
 function signIn(){
-    var main_script = 'js/main.js';
+    
+    $.getScript(main_script, function(){
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     
     if(email && password){
         var data_obj = {email: email, password : password};
-        //$.getScript(main_script, function(){
-        request('user/get',data_obj);
-                    
-        //goNext(2);
-       // });
-    }else{
-        navigator.notification.alert(
-                                     'Please Fill out all fields',  // message
-                                     alertDismissed, // callback
-                                     'Empty Field',   // title
-                                     'OK'   // buttonName
-                                     );
-
-       // $.getScript(main_script, function(){goAlert('Please Fill out all fields','Empty Field');});
-    }
+        var response = request('user/get',data_obj);
+        var responseString = JSON.stringify(response);
+        if(responseString){
+                movePage('confirm_now.html','slidefade','page',true,true);
+                var res = JSON.parse(responseString);
+                window.localStorage.setItem('name', res.name]);
+                window.localStorage.setItem('email', res.email]);
+                window.localStorage.setItem('phone', res.phone]);
+               // window.localStorage.setItem('address', res.name]);
+              //  window.localStorage.setItem('zipcode', res.name]);
+        }else
+                goAlert('Something went wrong', 'Error');
+    }else
+        goAlert('Please Fill out all fields','Empty Field');
     
+    });
 }
 
 function forgotPassword(){
-    
-    var email = document.getElementById('email').value;
-    var data_obj = {email: email};
-    
-    $.ajax({
-           //type: "POST",
-           url: base_url+'forgot/get',
-           dataType: 'json',
-           contentType: 'application/json',
-           data: data_obj,
-           success: function(result) {
-                                    navigator.notification.alert(
-                                        'You will recieve a message with more instructions',  // message
-                                        alertDismissed, // callback
-                                        'Forgot Password',   // title
-                                        'OK'   // buttonName
-                                                                );},
-           error: function(arguments) {alert(JSON.stringify(arguments));return arguments;}
-           });
-    
+    $.getScript(main_script, function(){
+            movePage('forgot_password.html','slidefade','page',true,true);
+    });
 }
 
-function request(end_url,data0){
-    $.ajax({
-           //type: "POST",
-           url: base_url+end_url,
-           dataType: 'json',
-           contentType: 'application/json',
-           data: data0,
-           success: function(result) {alert(JSON.stringify(result)); return result;},
-           error: function(arguments) {alert(JSON.stringify(arguments));return arguments;}
-           });
-    
-}

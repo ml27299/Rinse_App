@@ -27,10 +27,16 @@
             <script src="jquerymobile/jquery.mobile-1.3.1.min.js"></script>
             <script type="text/javascript" src="cordova-2.7.0.js"></script>
             <link rel="stylesheet" href="css/index.css">
+                <script type="text/javascript">
+                    touchMove = function(event) {
+                        event.preventDefault();
+                    }
+                    </script>
+
                 </head>
     <body>
         
-        <div data-role= "page" style = "background-image:url('../img/how_it_works.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
+        <div data-role= "page" ontouchmove="touchMove(event)" style = "background-image:url('../img/how_it_works.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
             <script type = "text/javascript" src="../js/how_it_works.js"></script>
                 <div class = "center-how-it-works-close">
                 <a href="javascript:goBack();" data-role="button" data-transition="slidedown" style="color: #038bb7;">Close<a>
