@@ -38,22 +38,23 @@ function nextPage(){
 }
 
 function logOut(){
-    refreshPage();
     var name = window.localStorage.getItem('name');
     var email = window.localStorage.getItem('email');
     var phone = window.localStorage.getItem('phone');
     var address = window.localStorage.getItem('address');
     var zip = window.localStorage.getItem('zip');
 
-    if(email && name && phone && zip && address)
-        document.write('<a href="javascript:goLogOut();" align = "center">Log Out?</a>');
+    if(email && name && phone && zip && address){
+        $('#logout').show();
+    }
+    
 }
 
 function goLogOut(){
     var main_script = 'js/main.js';
     window.localStorage.clear();
-    $.getScript(main_script, function(){goAlert('You have been logged out','Logout');});
-    refreshPage();
+    $.getScript(main_script, function(){goAlert('You have been logged out','Logout');refreshPage();});
+    
 }
 
 function refreshPage()
