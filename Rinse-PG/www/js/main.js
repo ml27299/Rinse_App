@@ -46,6 +46,12 @@ function movePage(page,trans,role,changeH,reload){
     
 }
 
+function include(htmlFile){
+    $.get('ajax/test.html', function(data) {
+        $('.result').html(data);
+        alert('Load was performed.');
+    });
+}
 
 
 //======================================================== FASTCLICK
