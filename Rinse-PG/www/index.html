@@ -49,12 +49,22 @@
         </div>
 
         <div data-role="content">
-            <p>This is Page 1. It was created dynamically using an underscore.js template.</p>
-            <p>Navigate to:</p>
-            <ul data-role="listview" data-inset="true">
-                <li><a href="#">Home</a></li>
-                <li><a href="#page2">Page 2</a></li>
-            </ul>
+            <div class = "center-tracker">
+                <image src = "img/create_account_step_1.png" />
+                 <label>CREATE ACCOUNT</label>
+            </div>
+            <div class = "signup-form">
+                   <input type = "text" placeholder = "Name" id = "name">
+                   <input type = "email" placeholder = "Email" id = "email">
+                   <input type = "tel" placeholder = "Phone" id = "phone">
+                   <input type = "password" placeholder = "Password" id = "password">
+                   <br />
+                   <a href="javascript:goNext(0);" data-role="button" style="color: #038bb7;">Next</a>
+                   
+                   <div class = "center-link-sign">
+                   <a href="javascript:hasAccount();" align = "center">Have an account already?</a>
+                  </div>
+                </div>
         </div>
 
     </script>
@@ -110,7 +120,7 @@
             console.log("Hello");
         }
         function onTouchMove(event){
-            event.preventDefault();
+            //event.preventDefault();
         };
         document.addEventListener("touchmove", onTouchMove, false);
         </script>
