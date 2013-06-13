@@ -1,52 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" href="jquerymobile/jquery.mobile-1.3.1.min.css">
-        <script src="jquery/jquery.js"></script>
-        <script src="js/index.js"></script>
-        <script src="jquerymobile/jquery.mobile-1.3.1.min.js"></script>
-        <script src="main.js"></script>
-            <script type="text/javascript">
-                touchMove = function(event) {
-                    event.preventDefault();
-                }
-                
-                </script>
-    </head>
-    <body onload="initFastButtons();">
+<html class="ui-mobile-rendering">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="jquerymobile/jquery.mobile-1.3.1.css"/>
+    <link rel="stylesheet" href="css/index.css">
         
-        <span id="fastclick">
-        <script>
-            document.addEventListener("deviceready", onDeviceReady, false);
-        </script>
+    <!-- The Templates -->
+    <script type="text/template" id="home">
         
-        <script type="text/javascript" src="cordova-2.7.0.js"></script>
-        <link rel="stylesheet" href="css/index.css">
-        <div data-role = "page" ontouchmove="touchMove(event)" style = "background-image:url('img/white_background.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
-            <div class = "center-logo">
-                <image src = "img/rinse_logo.png" />
-            </div>
-            <div class = "center-label-main">
-                <center>When Should We Pick Up Your Dry Cleaning &amp; Laundry</center>
-            </div>
-            <div class = "center-buttn">
-                <a href="javascript:nextPage();" data-role="button" style="color: #038bb7;">NOW</a>
-                <a href="[url]" data-role="button" style="color: #038bb7;">LATER</a>
-            </div>
-                
-            <div class = "how_it_works-bttn">
-                <a href="pages/how_it_works.html" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
-                
-            </div>
-            <div id = "logout" style="display:none">
-               <a href="javascript:goLogOut();" align = "center">Log Out?</a>
-            </div>
-
+        <div data-role="header" data-theme="c">
+            <h1>RINSE</h1>
         </div>
-            <script>logOut();</script>
-            </span>
-    </body>
+
+        <div data-role="content">
+        <div class = "center-logo">
+        <image src = "img/rinse_logo.png" />
+        </div>
+        <div class = "center-label-main">
+        <center>When Should We Pick Up Your Dry Cleaning &amp; Laundry</center>
+        </div>
+        <div class = "center-buttn">
+        <a href="#/now" data-role="button" style="color: #038bb7;">NOW</a>
+        <a href="#/later" data-role="button" style="color: #038bb7;">LATER</a>
+        </div>
+        
+        <div class = "how_it_works-bttn">
+        <a href="pages/how_it_works.html" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
+        </div>
+        
+        <div id = "logout" style="display:none">
+        <a href="javascript:goLogOut();" align = "center">Log Out?</a>
+        </div>
+        </div>
+
+    </script>
+
+    <script type="text/template" id="now">
+
+        <div data-role="header" data-theme="c">
+            <a href="#/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="#popupMenu" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>RINSE</h1>
+        </div>
+
+        <div data-role="content">
+            <p>This is Page 1. It was created dynamically using an underscore.js template.</p>
+            <p>Navigate to:</p>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">Home</a></li>
+                <li><a href="#page2">Page 2</a></li>
+            </ul>
+        </div>
+
+    </script>
+
+    <script type="text/template" id="later">
+
+        <div data-role="header">
+            <a href="#" data-icon="back" class="back ui-btn-left">Back</a>
+            <h1>Page 2</h1>
+        </div>
+
+        <div data-role="content">
+            <p>This is Page 2. It was created dynamically using an underscore.js template.</p>
+            <p>Navigate to:</p>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#">Home</a></li>
+                <li><a href="#page1">Page 1</a></li>
+            </ul>
+        </div>
+
+    </script>
+
+    <!-- The Scripts -->
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/jqm-config.js"></script>
+    <script src="js/lib/jquery-mobile.js"></script>
+    <script src="js/lib/underscore.js"></script>
+    <script src="js/lib/backbone.js"></script>
+    <script src="js/main.js"></script>
+        
+    <script>
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+            $("head").append('<script type="text/javascript" src="cordova-2.7.0.js"/>')
+            document.addEventListener("deviceready", onDeviceReady, false);
+        } else {
+            init(); //in a browser
+        }
+        function onDeviceReady() {
+            navigator.splashscreen.hide();
+            init()
+        }
+        function init(){
+            console.log("Hello");
+        }
+        function onTouchMove(event){
+            event.preventDefault();
+        };
+        document.addEventListener("touchmove", onTouchMove, false);
+        </script>
+</head>
+
+<body></body>
+
 </html>
