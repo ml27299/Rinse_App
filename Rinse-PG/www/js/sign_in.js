@@ -39,13 +39,16 @@ function signIn(){
 }
 
 function request(end_url,data0){
+    $.mobile.showPageLoadingMsg();
     $.ajax({
            //type: "POST",
+           async: false,
            url: base_url+end_url,
            dataType: 'json',
            contentType: 'application/json',
            data: data0,
            success: function(result) {
+           $.mobile.hidePageLoadingMsg()
            var responseString = JSON.stringify(result);
            if(responseString){
                 var res = JSON.parse(responseString);
