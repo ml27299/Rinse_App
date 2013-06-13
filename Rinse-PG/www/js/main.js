@@ -22,7 +22,6 @@ window.Page1View = Backbone.View.extend({
     },
 
     goBack:function(event){
-        console.log(Backbone.useRevereseAnimOnNextScreen);
         Backbone.useRevereseAnimOnNextScreen = true;
         Backbone.history.navigate('', {trigger:true})
         return false;
@@ -50,6 +49,17 @@ window.HowItWorksView = Backbone.View.extend({
 
     initialize: function() {
          this.transition = 'slideup';
+    },
+
+    events: {
+      //'eventName, itemToListenTo' : functionToCall
+      'click .close': 'onClose',
+    },
+
+    onClose:function(event){
+        Backbone.useSlideDownAnimOnNextScreen = true;
+        Backbone.history.navigate('', {trigger:true})
+        return false;
     },
 
     render:function (eventName) {
@@ -81,7 +91,6 @@ var AppRouter = Backbone.Router.extend({
     },
 
     home:function () {
-        console.log('#home');
         this.changePage(new HomeView());
     },
 
@@ -119,14 +128,19 @@ var AppRouter = Backbone.Router.extend({
         page.render();
         $('body').append($(page.el));
         var transition;
+        console.log(Backbone.useSlideDownAnimOnNextScreen)
         if (page.transition) {
             transition = page.transition;
+        }else if(Backbone.useSlideDownAnimOnNextScreen){
+            transition = 'slidedown';
+            //reset var
+            Backbone.useSlideDownAnimOnNextScreen = false;  
         }else{
-            transition = 'slide'
+            transition = 'slide';
         };
         var reverse;
         if(Backbone.useRevereseAnimOnNextScreen){
-            reverse = true;
+            reverse = true
             //reset the var so the next screen doesnt reverse
             Backbone.useRevereseAnimOnNextScreen = false;
         }else{
@@ -149,4 +163,5 @@ $(document).ready(function () {
     app = new AppRouter();
     Backbone.history.start();
     Backbone.useRevereseAnimOnNextScreen = false;
+    Backbone.useSlideDownAnimOnNextScreen = false;
 });
