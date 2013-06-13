@@ -118,10 +118,10 @@
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Rinse-PG-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Rinse-PG-Info.plist"; path = "../Rinse-PG-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
-		E0E4128117690B7300BDFAF9 /* rinse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinse_icon.png; sourceTree = "<group>"; };
-		E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rinse_icon@2x.png"; sourceTree = "<group>"; };
-		E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rinse_icon_ipad.png; sourceTree = "<group>"; };
-		E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rinse_icon_ipad@2x.png"; sourceTree = "<group>"; };
+		E0E4128117690B7300BDFAF9 /* rinse_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rinse_icon.png; path = ../../../rinse_icon.png; sourceTree = "<group>"; };
+		E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rinse_icon@2x.png"; path = "../../../rinse_icon@2x.png"; sourceTree = "<group>"; };
+		E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rinse_icon_ipad.png; path = ../../../rinse_icon_ipad.png; sourceTree = "<group>"; };
+		E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rinse_icon_ipad@2x.png"; path = "../../../rinse_icon_ipad@2x.png"; sourceTree = "<group>"; };
 		E0EE0C961767A1860098F819 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		E0EE0C981767A1860098F819 /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
 		E0EE0C991767A1860098F819 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
@@ -202,14 +202,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */,
-				E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */,
-				E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */,
-				E0E4128117690B7300BDFAF9 /* rinse_icon.png */,
 				FC0EE9371768812100FDAFD4 /* profile.js */,
 				FC0EE9351768672700FDAFD4 /* forgot_password.js */,
 				FC0EE933176865EC00FDAFD4 /* forgot_password.html */,
-				E0EE0C951767A1860098F819 /* HockeySDK.embeddedframework */,
 				FC0EE9301766622700FDAFD4 /* profile.html */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
@@ -253,6 +248,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0EE0C951767A1860098F819 /* HockeySDK.embeddedframework */,
 				E0EE0C9D1767A1FD0098F819 /* CoreText.framework */,
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -292,6 +288,10 @@
 		308D052D1370CCF300D202BF /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				E0E4128717690C8200BDFAF9 /* rinse_icon_ipad@2x.png */,
+				E0E4128517690C7300BDFAF9 /* rinse_icon_ipad.png */,
+				E0E4128317690B7700BDFAF9 /* rinse_icon@2x.png */,
+				E0E4128117690B7300BDFAF9 /* rinse_icon.png */,
 				30FC414816E50CA1004E6F35 /* icon-72@2x.png */,
 				308D052E1370CCF300D202BF /* icon-72.png */,
 				308D052F1370CCF300D202BF /* icon.png */,
