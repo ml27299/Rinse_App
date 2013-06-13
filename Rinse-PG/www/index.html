@@ -11,9 +11,11 @@
     <!-- The Templates -->
     <script type="text/template" id="home">
         
-        <div data-role="header" data-theme="c">
-            <h1>RINSE</h1>
-        </div>
+        <% 
+        // <div data-role="header" data-theme="c">
+        //     <h1>RINSE</h1>
+        // </div>
+        %>
 
         <div data-role="content">
         <div class = "center-logo">
@@ -28,7 +30,7 @@
         </div>
         
         <div class = "how_it_works-bttn">
-        <a href="pages/how_it_works.html" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
+        <a href="#/howitworks" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
         </div>
         
         <div id = "logout" style="display:none">
@@ -41,7 +43,7 @@
     <script type="text/template" id="now">
 
         <div data-role="header" data-theme="c">
-            <a href="#/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="#/" class="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
             <a href="#popupMenu" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
             <h1>RINSE</h1>
         </div>
@@ -71,6 +73,15 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#page1">Page 1</a></li>
             </ul>
+        </div>
+
+    </script>
+
+     <script type="text/template" id="how-it-works">
+
+        <div data-role="content">
+           <img src="./img/how_it_works.png" />
+            
         </div>
 
     </script>

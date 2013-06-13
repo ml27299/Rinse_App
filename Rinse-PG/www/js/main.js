@@ -2,6 +2,10 @@ window.HomeView = Backbone.View.extend({
 
     template:_.template($('#home').html()),
 
+    initialize: function() {
+         //this.transition = 'slide';
+    },
+
     render:function (eventName) {
         $(this.el).html(this.template());
         return this;
@@ -11,6 +15,18 @@ window.HomeView = Backbone.View.extend({
 window.Page1View = Backbone.View.extend({
 
     template:_.template($('#now').html()),
+
+    events: {
+      //'eventName, itemToListenTo' : functionToCall
+      'click .back': 'goBack',
+    },
+
+    goBack:function(event){
+        console.log(Backbone.useRevereseAnimOnNextScreen);
+        Backbone.useRevereseAnimOnNextScreen = true;
+        Backbone.history.navigate('', {trigger:true})
+        return false;
+    },
 
     render:function (eventName) {
         $(this.el).html(this.template());
@@ -28,6 +44,20 @@ window.Page2View = Backbone.View.extend({
     }
 });
 
+window.HowItWorksView = Backbone.View.extend({
+
+    template:_.template($('#how-it-works').html()),
+
+    initialize: function() {
+         this.transition = 'slideup';
+    },
+
+    render:function (eventName) {
+        $(this.el).html(this.template());
+        return this;
+    }
+});
+
 var AppRouter = Backbone.Router.extend({
 
     routes:{
@@ -37,7 +67,8 @@ var AppRouter = Backbone.Router.extend({
         "profile":"profile",
         "signup":"singup",
         "signin":"singin",
-        "forgotpw":"forgotpw"
+        "forgotpw":"forgotpw",
+        "howitworks":"howitworks"
     },
 
     initialize:function () {
@@ -78,12 +109,31 @@ var AppRouter = Backbone.Router.extend({
         this.changePage(new Page2View());
     },
 
+    howitworks:function () {
+        this.changePage(new HowItWorksView());
+    },
+                                       
+
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
         page.render();
         $('body').append($(page.el));
-        var transition = 'slide';
-        var reverse = false;
+        var transition;
+        if (page.transition) {
+            transition = page.transition;
+        }else{
+            transition = 'slide'
+        };
+        var reverse;
+        if(Backbone.useRevereseAnimOnNextScreen){
+            reverse = true;
+            //reset the var so the next screen doesnt reverse
+            Backbone.useRevereseAnimOnNextScreen = false;
+        }else{
+            reverse = false;
+            Backbone.useRevereseAnimOnNextScreen = false;
+        }
+        
         // We don't want to slide the first page
         if (this.firstPage) {
             transition = 'none';
@@ -98,4 +148,5 @@ $(document).ready(function () {
     console.log('document ready');
     app = new AppRouter();
     Backbone.history.start();
+    Backbone.useRevereseAnimOnNextScreen = false;
 });
