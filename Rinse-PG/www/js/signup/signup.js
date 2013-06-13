@@ -19,12 +19,14 @@
 
 
 var script_url = '../js/signup/signup_model.js';
+var main_url = '../js/main.js';
+
 function goBack(){
     history.go(-1);
 }
 function hasAccount(){
-    $.getScript(script_url, function(){movePage('sign_in.html','slideup','page',true,true);});
+    $.getScript(main_url, function(){movePage('sign_in.html','slideup','page',true,true);});
 }
 function goProfile(){
-    $.getScript(script_url, function(){movePage('profile.html','slidefade','page',true,false);});
+    $.getScript(main_url, function(){movePage('profile.html','slidefade','page',true,false);});
 }

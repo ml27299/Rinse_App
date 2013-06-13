@@ -41,11 +41,8 @@ function post(){
         zipSupported(zip);
         var data_obj = {name:name,email:email,phone:phone,password:password,address:address,address2:address2,zip:zip};
         
-        $.getScript(model_script, function()
-        {
             request('user/post',data_obj);
             goNext(1);
-        });
         });
     }else
         $.getScript(main_script, function(){goAlert('Please Fill out all fields','Empty Field');});
@@ -53,5 +50,5 @@ function post(){
 }
 
 function hasAccount(){
-    $.getScript(model_script, function(){movePage('sign_in.html','slideup','page',true,true);});
+    $.getScript(main_script, function(){movePage('sign_in.html','slideup','page',true,true);});
 }

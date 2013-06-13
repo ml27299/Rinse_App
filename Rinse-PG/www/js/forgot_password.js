@@ -41,5 +41,5 @@ function goAction(){
 }
 
 function goProfile(){
-    $.getScript(script_url, function(){movePage('profile.html','slidefade','page',true,false);});
+    $.getScript(main_script, function(){movePage('profile.html','slidefade','page',true,false);});
 }

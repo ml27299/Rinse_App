@@ -52,17 +52,19 @@ function request(end_url,data0){
            var responseString = JSON.stringify(result);
            if(responseString){
                 var res = JSON.parse(responseString);
+           if(res.email){
                 window.localStorage.setItem('name', res.name);
                 window.localStorage.setItem('email', res.email);
                 window.localStorage.setItem('phone', res.phone);
                 window.localStorage.setItem('address', res.address);
                 window.localStorage.setItem('zip', res.zip);
                 movePage('confirm_now.html','slidefade','page',true,true);
-            }else
+           }else
                 $.getScript(main_script, function(){ goAlert('Something went wrong', 'Error');});
-},
+           }
+        },
            error: function(arguments) {alert(JSON.stringify(arguments));return arguments;}
-           });
+    });
     
 }
 
@@ -76,5 +78,5 @@ function forgotPassword(){
 function goProfile(){
     var email = document.getElementById('emailAddress').value;
     if(!email)
-    $.getScript(script_url, function(){movePage('profile.html','slidefade','page',true,false);});
+    $.getScript(main_script, function(){movePage('profile.html','slidefade','page',true,false);});
 }

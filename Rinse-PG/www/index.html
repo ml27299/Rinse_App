@@ -41,12 +41,12 @@
         
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
         <link rel="stylesheet" href="css/index.css">
-        <div data-role = "page" ontouchmove="touchMove(event)" >
+        <div data-role = "page" ontouchmove="touchMove(event)" style = "background-image:url('img/white_background.png');background-color:#cccccc; background-position:center center; background-size:100% 100%;">
             <div class = "center-logo">
                 <image src = "img/rinse_logo.png" />
             </div>
             <div class = "center-label-main">
-                <center>When Should We Pick Up Your Dry Cleaning &amp; Laundry</center>
+                <center>When Should We Pick Up Your Dry Cleaning &amp; Laundry?</center>
             </div>
             <div class = "center-buttn">
                 <a href="javascript:nextPage();" data-role="button" style="color: #038bb7;">NOW</a>
@@ -57,12 +57,13 @@
                 <a href="pages/how_it_works.html" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
                 
             </div>
-            <div id = "logout" style="display:none">
+            <br/><br/>
+            <div id = "logout" style="display:none; margin-left:40%">
                <a href="javascript:goLogOut();" align = "center">Log Out?</a>
             </div>
-
-        </div>
             <script>logOut();</script>
+        </div >
+            
             </span>
     </body>
 </html>
