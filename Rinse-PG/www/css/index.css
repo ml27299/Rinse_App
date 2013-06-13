@@ -37,7 +37,7 @@
 .center-logo{ position: relative; margin-top: 30%; margin:10% 33%;  width:100% height:100%
 }@media(min-device-height:1004px) {.center-logo{ position: relative; margin-top: 10%;  margin:20% 45%;}}
 
-.center-confirm{ position: relative;  margin:15% 15%;
+.center-confirm{ position: relative;  margin:10% 15%;
 }@media(min-device-height:1004px) {.center-confirm{ position: relative; margin-top: 10%;  margin:20% 45%;  width:100% height:100%}}
 
 .center-confirm-label-top{ position: relative;  margin:10% 15%;  width:100%; height:100%;font-weight:700;
