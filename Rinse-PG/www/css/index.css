@@ -11,8 +11,12 @@
 @media(min-device-height:1004px) {.center-link-sign{ position: absolute; margin-top: 0%; margin-left:35%; width:80%}}
 .center-label{ position: absolute; margin-top: 15%; margin-left:25%; font-weight:700; }
 
-.center-logo{ position: relative; margin-top: 30%; margin:10% 35%;  width:100% height:100%
-}@media(min-device-height:1004px) {.center-logo{ position: relative; margin-top: 10%;  margin:20% 45%;}}
+.center-logo{ 
+	width: 107px;
+	margin: 0px auto 40px auto;
+}
+
+@media(min-device-height:1004px) {.center-logo{ position: relative; margin-top: 10%;  margin:20% 45%;}}
 
 .center-confirm{ position: relative;  margin:15% 15%;
 }@media(min-device-height:1004px) {.center-confirm{ position: relative; margin-top: 10%;  margin:20% 45%;  width:100% height:100%}}
@@ -30,6 +34,7 @@
 	width: 134px !important;
 
 }
+
 /*.how_it_works-bttn{ position: absolute;margin-left:45%; margin-top: 44%; width: 100%; height:100%
 }@media(min-device-height: 568px) and (max-device-height: 1003px){.how_it_works-bttn{ position: absolute;margin-left:30%; margin-top: 38%; width: 100%; height:100%}}
 @media(max-device-height: 567px) {.how_it_works-bttn{ position: absolute;margin-left:30%; margin-top: 27%; width: 100%; height:100%}}*/
