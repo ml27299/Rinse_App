@@ -14,6 +14,10 @@ window.HomeView = Backbone.View.extend({
 
 window.NowView = Backbone.View.extend({
 
+     initialize: function() {
+         //this.transition = 'slide';
+    },
+
     template:_.template($('#now').html()),
 
     events: {
@@ -28,7 +32,32 @@ window.NowView = Backbone.View.extend({
     },
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
+        setTimeout(function () {
+            $(".content").scrollview();
+        }, 100);
+
+        return this;
+    }
+});
+
+window.SignUp1 = Backbone.View.extend({
+
+    template:_.template($('#signup1').html()),
+
+    events: {
+      //'eventName, itemToListenTo' : functionToCall
+      'click .back': 'goBack',
+    },
+
+    goBack:function(event){
+        Backbone.useRevereseAnimOnNextScreen = true;
+        Backbone.history.navigate('', {trigger:true})
+        return false;
+    },
+
+    render:function (eventName) {
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         setTimeout(function () {
             $(".content").scrollview();
         }, 100);
@@ -53,7 +82,7 @@ window.SignUp2 = Backbone.View.extend({
     },
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
 });
@@ -74,7 +103,7 @@ window.SignUp3 = Backbone.View.extend({
     },
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
 });
@@ -95,7 +124,7 @@ window.Confirm = Backbone.View.extend({
     },
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
 });
@@ -105,7 +134,7 @@ window.LaterView = Backbone.View.extend({
     template:_.template($('#later').html()),
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
 });
@@ -115,7 +144,7 @@ window.SignInView = Backbone.View.extend({
     template:_.template($('#signin').html()),
 
     render:function (eventName) {
-        $(this.el).html(this.template());
+        $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
 });
@@ -233,7 +262,7 @@ var AppRouter = Backbone.Router.extend({
         "later":"later",
         "howitworks":"howitworks",
         "profile":"profile",
-        "signup":"singup",
+        "signup1":"singup1",
         "signup2":"signup2",
         "signup3":"signup3",
         "confirm":"confirm",
@@ -259,15 +288,21 @@ var AppRouter = Backbone.Router.extend({
     },
 
     now:function () {
-        this.changePage(new NowView());
+        Backbone.loggedIn = false;
+        if (Backbone.loggedIn){
+            this.changePage(new NowView());
+        }else{
+            this.changePage(new SignUp1());
+        }
+        
     },
 
     later:function () {
         this.changePage(new LaterView());
     },
    
-    signup:function () {
-        this.changePage(new Page2View());
+    signup1:function () {
+        this.changePage(new SignUp1());
     },
 
     signup2:function () {
