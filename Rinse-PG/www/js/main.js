@@ -373,9 +373,11 @@ var AppRouter = Backbone.Router.extend({
     changePage:function (page) {
         $(page.el).attr('data-role', 'page');
         $('#popupMenu').remove();
-        page.render();
         
+        page.render();
         $('body').append($(page.el));
+
+        $('#loading-indicator').remove();
         $(page.el).append('<div id="loading-indicator">LOADING </div>');
 
         var transition;
