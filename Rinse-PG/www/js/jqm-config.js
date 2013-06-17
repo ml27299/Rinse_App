@@ -5,7 +5,8 @@ $(document).bind("mobileinit", function () {
     $.mobile.pushStateEnabled = false;
 
     // Remove page from DOM when it's being replaced
-    // $('div[data-role="page"]').on('pagehide', function (event, ui) {
-    //     $(event.currentTarget).remove();
-    // });
+    $('div[data-role="page"]').on('pagehide', function (event, ui) {
+    	console.log("HELOOdfas")
+        $(event.currentTarget).remove();
+    });
 });

@@ -28,27 +28,50 @@
         <a href="#/now" data-role="button" style="color: #038bb7;">NOW</a>
         <a href="#/later" data-role="button" style="color: #038bb7;">LATER</a>
         </div>
+
+         <%= extraHTML  %>
         
         <div class = "how_it_works-bttn">
         <a href="#/howitworks" data-theme=""  data-transition = "slideup" id=""> <img src="img/how_it_works_button.png"></a>
         </div>
-        
+        <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+
         <div id = "logout" style="display:none">
         <a href="javascript:goLogOut();" align = "center">Log Out?</a>
+
         </div>
+        </div>
+
+
+
+
+    </script>
+
+    <script type="text/template" id="signin">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>SIGN IN</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
         </div>
 
     </script>
 
     <script type="text/template" id="now">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header" data-theme="c" data-position="fixed">
             <a href="#/" class="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
-            <a href="#popupMenu" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
             <h1>RINSE</h1>
         </div>
 
-        <div data-role="content">
+        <div data-role="content" class="content-scroll">
             <div class = "center-tracker">
                 <image src = "img/create_account_step_1.png" />
                  <label>CREATE ACCOUNT</label>
@@ -59,13 +82,72 @@
                    <input type = "tel" placeholder = "Phone" id = "phone">
                    <input type = "password" placeholder = "Password" id = "password">
                    <br />
-                   <a href="javascript:goNext(0);" data-role="button" style="color: #038bb7;">Next</a>
+                   <a href="#/signup2" data-role="button" style="color: #038bb7;">Next</a>
                    
                    <div class = "center-link-sign">
-                   <a href="javascript:hasAccount();" align = "center">Have an account already?</a>
+                   <a href="#/signin" align = "center">Have an account already?</a>
                   </div>
-                </div>
+            </div>
+
         </div>
+
+
+
+    </script>
+
+    <script type="text/template" id="signup2">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#/" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>RINSE</h1>
+        </div>
+
+        <div data-role="content" class="content-scroll">
+            <div class = "center-tracker">
+                <image src = "img/create_account_step_2.png" />
+                 <label>ADDRESSS</label>
+            </div>
+            <a href="#/signup3" data-role="button" style="color: #038bb7;">Next</a>
+        </div>
+
+
+    </script>
+
+    <script type="text/template" id="signup3">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#/" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>RINSE</h1>
+        </div>
+
+        <div data-role="content" class="content-scroll">
+            <div class = "center-tracker">
+                <image src = "img/create_account_step_3.png" />
+                 <label>PAYMENT INFO</label>
+            </div>
+            <a href="#/confirm" data-role="button" style="color: #038bb7;">Next</a>
+        </div>
+
+
+    </script>
+
+    <script type="text/template" id="confirm">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#/" class="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>RINSE</h1>
+        </div>
+
+        <div data-role="content" class="content-scroll">
+            <div class = "center-tracker">
+                 <label>YOUR RINSE IS CONFIRMED</label>
+            </div>
+            <a href="#/" class="home" data-role="button" style="color: #038bb7;">Next</a>
+        </div>
+
 
     </script>
 
@@ -97,12 +179,125 @@
 
     </script>
 
+    <script type="text/template" id="profile">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>PROFILE</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="page-container">
+                <div class = "profile-short">
+                        <image src = "img/profile_holder.png"/>
+                        <div class = "profile-name"> 
+                            <input type="text" placeholder = "First Name" id = "first_name"/>
+                            <input type="text" placeholder = "Last Name" id = "last_name"/>
+                        </div>
+                </div>
+                
+                <div class = "profile-info">
+                    <input type="text" placeholder = "Email Address" id = "emailAddress"/>
+                    <input type="text" placeholder = "Phone #" id = "phone_profile"/>
+                    <input type="text" placeholder = "Address" id = "address_profile"/>
+                    <input type="text" placeholder = "Apt #" id = "apt_num"/>
+                    <input type="text" placeholder = "Zipcode" id = "zip_profile"/><br /></div>
+                </div>
+            </div>
+        </div>
+
+         <%= extraHTML  %>
+
+    </script>
+
+    <script type="text/template" id="billing">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>BILLING</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
+        </div>
+
+    </script>
+
+    <script type="text/template" id="promos">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>PROMOTIONS</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
+        </div>
+
+    </script>
+
+    <script type="text/template" id="share">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>SHARE</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
+        </div>
+
+    </script>
+
+    <script type="text/template" id="about">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>ABOUT</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
+        </div>
+
+    </script>
+
+    <script type="text/template" id="support">
+
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="javascript:window.history.back();" class="back" data-icon="back" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-back">Back</a>
+            <a href="javascript:goPopup()" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-rel="popup">Options</a>
+            <h1>Support</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" class="close" data-role="button">Close</a>
+           
+            
+        </div>
+
+    </script>
+
     <!-- The Scripts -->
     <script src="js/lib/jquery.js"></script>
     <script src="js/jqm-config.js"></script>
     <script src="js/lib/jquery-mobile.js"></script>
     <script src="js/lib/underscore.js"></script>
     <script src="js/lib/backbone.js"></script>
+    <script src="js/lib/jquery.scrollview.js"></script>
     <script src="js/main.js"></script>
         
     <script>
@@ -123,9 +318,31 @@
             //event.preventDefault();
         };
         document.addEventListener("touchmove", onTouchMove, false);
-        </script>
+    </script>
+
+
 </head>
 
-<body></body>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+// var popupHTML = ''
+// popupHTML += '<div data-role="popup" id="popupMenu" data-theme="a" class="ui-popup ui-body-a ui-overlay-shadow ui-corner-all" aria-disabled="false" data-disabled="false" data-shadow="true" data-corners="true" data-transition="slidedown" data-position-to="origin">'
+// popupHTML += '<ul data-role="listview" data-inset="true" style="min-width:250px;" data-theme="a" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">'
+// popupHTML += '<li data-role="divider" data-theme="a" class="ui-li ui-li-static ui-btn-up-a ui-corner-top">SETTINGS</li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(profLink)" class="ui-link-inherit">PROFILE</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(billingLink)" class="ui-link-inherit">BILLING</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-corner-bottom ui-li-last ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(promosLink)" class="ui-link-inherit">PROMOTIONS</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(shareLink)" class="ui-link-inherit">SHARE</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(aboutLink)" class="ui-link-inherit">ABOUT</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-corner-bottom ui-li-last ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="javascript:goToPageFromPopup(supportLink)" class="ui-link-inherit">CUSTOMER SUPPORT</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>'
+// popupHTML += '</ul>'
+// popupHTML += '</div>';
+
+// document.write(popupHTML);
+
+</script>
 
 </html>
