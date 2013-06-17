@@ -396,6 +396,15 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
+// Models ------------------------------------------------------------------------------------
+var User = Backbone.Model.extend({
+        urlRoot:'/contacts_api/contacts/id'
+    })
+// var Contacts = Backbone.Collection.extend({
+//         url: '/contacts_api/contacts'
+//     });
+// ------------------------------------------------------------------------------------
+
 $(document).ready(function () {
     app = new AppRouter();
     Backbone.history.start();
@@ -403,6 +412,7 @@ $(document).ready(function () {
     Backbone.useSlideDownAnimOnNextScreen = false;
 
 });
+
 
  function goToPageFromPopup(link){
     $( "#popupMenu" ).on({
