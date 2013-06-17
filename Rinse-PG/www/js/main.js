@@ -262,11 +262,11 @@ var AppRouter = Backbone.Router.extend({
         "later":"later",
         "howitworks":"howitworks",
         "profile":"profile",
-        "signup1":"singup1",
+        "signin":"signin",
+        "signup1":"signup1",
         "signup2":"signup2",
         "signup3":"signup3",
         "confirm":"confirm",
-        "signin":"singin",
         "billing":"billing",
         "promos":"promos",
         "share":"share",
@@ -292,7 +292,7 @@ var AppRouter = Backbone.Router.extend({
         if (Backbone.loggedIn){
             this.changePage(new NowView());
         }else{
-            this.changePage(new SignUp1());
+            Backbone.history.navigate("#/signup1", {trigger:true})
         }
         
     },
