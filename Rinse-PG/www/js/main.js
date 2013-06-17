@@ -3,10 +3,26 @@ window.HomeView = Backbone.View.extend({
     template:_.template($('#home').html()),
 
     initialize: function() {
-         //this.transition = 'slide';
+         //console.log(appData)
     },
 
     render:function (eventName) {
+        console.log(appData.user)
+        var that = this;
+        appData.user.fetch({
+            type: 'POST',
+            data: {email:"michael.aldape@salsamobi.com", password:"test"},
+            success:function(user){
+                //that.$el.html(template);
+                //need to return user ID from server
+                console.log(user)
+                //console.log(appData.user)
+                window.localStorage.username = user.get('name');
+                $("#loading-indicator").hide();
+                //$(that.el).html(that.template({extraHTML:popupHTML}));
+                //return that;
+            }
+        })
         $(this.el).html(this.template({extraHTML:popupHTML}));
         return this;
     }
@@ -360,6 +376,7 @@ var AppRouter = Backbone.Router.extend({
         page.render();
         
         $('body').append($(page.el));
+        $(page.el).append('<div id="loading-indicator">LOADING </div>');
 
         var transition;
         if (page.transition) {
@@ -398,15 +415,40 @@ var AppRouter = Backbone.Router.extend({
 
 // Models ------------------------------------------------------------------------------------
 var User = Backbone.Model.extend({
-        urlRoot:'/contacts_api/contacts/id'
+        urlRoot:'user/get'
     })
 // var Contacts = Backbone.Collection.extend({
 //         url: '/contacts_api/contacts'
-//     });
+// });
 // ------------------------------------------------------------------------------------
 
+
 $(document).ready(function () {
-    app = new AppRouter();
+
+    $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+          options.url = 'http://rinse.herokuapp.com/public/' + options.url;
+        });
+
+    $.fn.serializeObject = function() {
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function() {
+          if (o[this.name] !== undefined) {
+              if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || '');
+          } else {
+              o[this.name] = this.value || '';
+          }
+      });
+      return o;
+    };
+
+    appData = new Object();
+    appData.user = new User();
+
+    appRouter = new AppRouter();
     Backbone.history.start();
     Backbone.useRevereseAnimOnNextScreen = false;
     Backbone.useSlideDownAnimOnNextScreen = false;
@@ -426,6 +468,9 @@ function goPopup(){
     console.log($('#popupMenu'))
     $('#popupMenu').popup('open');
 }
+
+var appData;
+var appRouter;
 
 var profLink = "#/profile";
 var billingLink = "#/billing";
